@@ -1,24 +1,20 @@
 import React from 'react';
-import {
-  HashRouter as Router,
-  Switch,
-  Route,
-  IndexRoute,
-  Link,
-} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
-import Home from './home';
-import Roster from './roster';
-import Schedule from './schedule';
+import Dashboard from './dashboard';
+import Cruise from './cruise';
+import Agents from './agents';
+import Help from './help';
 
 class Content extends React.Component {
   render() {
     return (
-      <div>
+      <div className="content">
       	<Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/roster' component={Roster}/>
-          <Route path='/schedule' component={Schedule}/>
+          <Route exact path='/' component={Dashboard}/>
+          <Route path='/my-cruise' component={Cruise}/>
+          <Route path='/agents' component={Agents}/>
+          <Route path='/help' component={Help}/>
         </Switch>
       </div>
     );

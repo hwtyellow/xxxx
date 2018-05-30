@@ -1,15 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {
-  HashRouter as Router,
-  Switch,
-  Route,
-  IndexRoute,
-  Link,
-} from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 
-
+import Css from './css/common.css';
 import Header from './pages/header';
 import Main from './pages/main';
 import Footer from './pages/footer';
