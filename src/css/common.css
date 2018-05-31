@@ -29,7 +29,7 @@ body {
     color: #333;
     font-family: 'Microsoft YaHei';
     line-height: 20px;
-    min-width: 1024;
+    min-width: 1000px;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -112,14 +112,18 @@ nav h2 {
 
 nav li {
   float: right;
+}
+
+nav li a {
   padding: 2px 10px;
   border: 2px solid #333;
   border-radius: 10px 10px 0 0;
   margin-left: 6px;
   cursor: pointer;
+  display: inline-block;
 }
 
-nav li.active {
+nav li a.active {
   background-color: #666;
   border-bottom-color: #666;
   color: #fff; 
@@ -131,18 +135,18 @@ nav li.active {
   height: 480px;
 }
 
-.filter {
+.agents .filter {
   background-color: #666;
   border-bottom: 2px solid #333;
   padding: 10px 12px;
 }
 
-.filter label {
+.agents .filter label {
   color: #ccc;
   font-size: 16px;
 }
 
-.filter span {
+.agents .filter span {
   border: 2px solid #333;
   border-radius: 20px;
   background-color: #999;
@@ -153,6 +157,26 @@ nav li.active {
   cursor: pointer;
 }
 
-.filter span.active {
+.agents .filter span.active {
   background-color: #e5e5e5;
+}
+
+.agents .box {
+  position: relative;
+  z-index: 2;
+  height: 434px;
+}
+
+.agents .result {
+  border-right: 2px solid #333;
+  margin-right: 240px;
+  height: 100%;
+}
+
+.agents .desc {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 100%;
 }

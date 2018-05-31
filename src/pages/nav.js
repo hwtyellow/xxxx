@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 class Nav extends React.Component {
   componentDidMount () {
-    
+
   }
   render() {
     return (
@@ -12,10 +12,10 @@ class Nav extends React.Component {
       	<nav>
           <h2>Cruise</h2>
           <ul className="clearfix" ref="nav_ul">
-            <li><Link to='/help'>HELP</Link></li>
-            <li className="active"><Link to='/agents'>AGENTS</Link></li>
-            <li><Link to='/my-cruise'>MY CRUISE</Link></li>
-            <li><Link to='/'>DASHBOARD</Link></li>
+            <li><NavLink to='/help'>HELP</NavLink></li>
+            <li className="active"><NavLink to='/agents'>AGENTS</NavLink></li>
+            <li><NavLink to='/my-cruise'>MY CRUISE</NavLink></li>
+            <li><NavLink to='/' exact="true">DASHBOARD</NavLink></li>
           </ul>
         </nav>
       </div>

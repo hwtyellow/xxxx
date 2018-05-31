@@ -10,6 +10,24 @@ class Agents extends React.Component {
       		<span className="active">Physical</span>
       		<span>Virtual</span>
       	</div>
+      	<div className="box">
+      		<div className="result">
+      			<p>11111</p>
+      			<p>11111</p>
+      			<p>11111</p>
+      			<p>11111</p>
+      			<p>11111</p>
+      		</div>
+      		<div className="desc">
+      			<p>222222</p>
+      			<p>222222</p>
+      			<p>222222</p>
+      			<p>222222</p>
+      			<p>222222</p>
+      			<p>222222</p>
+
+      		</div>
+      	</div>
       </div>
     );
   }

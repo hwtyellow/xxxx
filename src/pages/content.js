@@ -10,12 +10,10 @@ class Content extends React.Component {
   render() {
     return (
       <div className="content">
-      	<Switch>
           <Route exact path='/' component={Dashboard}/>
           <Route path='/my-cruise' component={Cruise}/>
           <Route path='/agents' component={Agents}/>
           <Route path='/help' component={Help}/>
-        </Switch>
       </div>
     );
   }
