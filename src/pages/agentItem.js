@@ -10,6 +10,10 @@ class AgentItem extends React.Component {
 		var resourcesList = dataItem.resources.map(resourcesItem=>
 				<label key="{resourcesItem.id}" className="item-resource">{resourcesItem.name}<span className="delete" onClick="">x</span></label>
 			)
+		var operateBtn;
+		if(dataItem.state == "idle") {
+			operateBtn = <label>Deny</label>
+		}
 		return(
 			<li className={"list-group-item clearfix color-" + dataItem.state}>
 				<img className="fl" src="" width="40" height="40" />
@@ -22,6 +26,11 @@ class AgentItem extends React.Component {
 						+<span className="underline">Specify Resource</span>
 						<em>|</em>Resources:{resourcesList}
 					</p>
+				</div>
+				<div className="item-operate">
+					{
+						operateBtn
+					}
 				</div>
 			</li>
 		);

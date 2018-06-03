@@ -191,6 +191,8 @@ nav li a.active {
   border-radius: 6px;
   margin-bottom: 16px;
   padding: 10px 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .agents .list-group-item.color-idle {
@@ -205,6 +207,10 @@ nav li a.active {
   background-color: #666;
   margin-right: 20px;
   border-radius: 50%;
+}
+
+.agents .item-detail {
+  width: 75%;
 }
 
 .agents .item-detail em {
@@ -233,6 +239,13 @@ nav li a.active {
   height: 12px;
   line-height: 12px;
   margin-left: 4px;
+  cursor: pointer;
+}
+
+.agents .item-operate {
+  position: absolute;
+  right: 16px;
+  bottom: 10px;
   cursor: pointer;
 }
 
