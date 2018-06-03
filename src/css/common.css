@@ -180,3 +180,79 @@ nav li a.active {
   width: 240px;
   height: 100%;
 }
+
+.agents .result {
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.agents .list-group-item {
+  border: 2px solid #333;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  padding: 10px 16px;
+}
+
+.agents .list-group-item.color-idle {
+  background-color: #C1FFC1;
+}
+
+.agents .list-group-item.color-building {
+  background-color: #ffffbb;
+}
+
+.agents .list-group-item img {
+  background-color: #666;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.agents .item-detail em {
+  font-style: normal;
+  color: #999;
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.agents .item-email {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.agents .item-resource {
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.agents .item-resource span {
+  color: #999;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 0 3px;
+  display: inline-block;
+  height: 12px;
+  line-height: 12px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.agents .desc {
+  padding: 14px 10px 14px 20px;
+  box-sizing: border-box;
+}
+
+.agents .desc h3{
+  padding-bottom: 5px;
+  font-size: 14px;
+  border-bottom: 2px solid #e5e5e5; 
+  margin-bottom: 4px;
+}
+
+.agents .desc .summary {
+  margin-bottom: 20px;
+}
+
+.agents .desc .summary p {
+  line-height: 24px;
+  font-size: 12px;
+}
