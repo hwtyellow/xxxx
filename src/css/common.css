@@ -32,7 +32,6 @@ body {
     min-width: 1000px;
     position: relative;
     z-index: 1;
-    overflow: hidden;
 }
 
 input[type='text'],
@@ -186,7 +185,7 @@ nav li a.active {
   box-sizing: border-box;
 }
 
-.agents .list-group-item {
+.agents .result .list-group-item {
   border: 2px solid #333;
   border-radius: 6px;
   margin-bottom: 16px;
@@ -203,7 +202,7 @@ nav li a.active {
   background-color: #ffffbb;
 }
 
-.agents .list-group-item img {
+.agents .result .list-group-item img {
   background-color: #666;
   margin-right: 20px;
   border-radius: 50%;
@@ -237,7 +236,7 @@ nav li a.active {
   padding: 0 3px;
   display: inline-block;
   height: 12px;
-  line-height: 12px;
+  line-height: 10px;
   margin-left: 4px;
   cursor: pointer;
 }
@@ -268,4 +267,9 @@ nav li a.active {
 .agents .desc .summary p {
   line-height: 24px;
   font-size: 12px;
+}
+
+.history .list-group-item {
+  font-size: 12px;
+  line-height: 24px;
 }

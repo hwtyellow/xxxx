@@ -1,6 +1,7 @@
 import React from 'react';
 
 import AgentsList from './agentsList';
+import HistoryList from './historyList';
 
 class Agents extends React.Component {
   	constructor(props) {
@@ -66,7 +67,18 @@ class Agents extends React.Component {
     				]
     			}
     		],
-    		summary: {}
+    		summary: {},
+        history: [
+          {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"},
+          {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"},
+          {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"},
+          {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"},
+          {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"},
+          {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"},
+          {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"},
+          {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"},
+          {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"}
+        ]
     	}
   	}
   	componentWillMount() {
@@ -117,12 +129,7 @@ class Agents extends React.Component {
 		      			<div className="history">
 		      				<h3>History</h3>
 		      				<div>
-				      			<p>222222</p>
-				      			<p>222222</p>
-				      			<p>222222</p>
-				      			<p>222222</p>
-				      			<p>222222</p>
-				      			<p>222222</p>
+                    <HistoryList history={this.state.history} />
 
 		      				</div>
 		      			</div>
