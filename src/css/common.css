@@ -80,6 +80,10 @@ a:link {
     zoom: 1
 }
 
+.no_dis {
+  display: none;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -140,7 +144,7 @@ nav li a.active {
   padding: 10px 12px;
 }
 
-.agents .filter label {
+.agents .filter .label {
   color: #ccc;
   font-size: 16px;
 }
@@ -170,6 +174,7 @@ nav li a.active {
   border-right: 2px solid #333;
   margin-right: 240px;
   height: 100%;
+  overflow: auto;
 }
 
 .agents .desc {

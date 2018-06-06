@@ -6,10 +6,15 @@ class AgentsList extends React.Component {
 	constructor(props) {
 		super(props);
 	}
+
+
+
 	render() {
 		var agentsList = this.props.data.map(listItem=>
 			<AgentItem data={listItem}
-						key={listItem.id} />
+						key={listItem.id} 
+						deleteResource={this.props.deleteResource} 
+						filter={this.props.filter} />
 
 		)
 		return(
