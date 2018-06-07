@@ -23,10 +23,20 @@ class AgentItem extends React.Component {
 		// var displayStyle="display:block"
 		var operateBtn;
 		if(dataItem.state == "idle") {
-			operateBtn = <label>Deny</label>
+			operateBtn = <label>Deny</label>;
+		}
+		var addBox = null;
+		if(dataItem.id == 1) {
+			addBox = <div className="addBox">
+						<p>(separate multiole resources name with commas)</p>
+						<input />
+						<div>
+						<span className="button">Add resources</span><span className="button">Close</span>
+						</div>
+					</div>;
 		}
 		return(
-			<li className={"list-group-item clearfix color-" + dataItem.state + ' ' + displayStyle}>
+			<li className={"relatv list-group-item clearfix color-" + dataItem.state + ' ' + displayStyle}>
 				<img className="fl" src="" width="40" height="40" />
 				<div className="item-detail fl">
 					<p>
@@ -43,6 +53,7 @@ class AgentItem extends React.Component {
 						operateBtn
 					}
 				</div>
+				{addBox}
 			</li>
 		);
 	}
