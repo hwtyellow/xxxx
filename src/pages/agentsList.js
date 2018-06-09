@@ -14,7 +14,11 @@ class AgentsList extends React.Component {
 			<AgentItem data={listItem}
 						key={listItem.id} 
 						deleteResource={this.props.deleteResource} 
-						filter={this.props.filter} />
+						beforeAddResource={this.props.beforeAddResource}
+						cancelAddResource={this.props.cancelAddResource}
+						addResource={this.props.addResource}
+						filter={this.props.filter}
+						toAddResourceId={this.props.toAddResourceId} />
 
 		)
 		return(

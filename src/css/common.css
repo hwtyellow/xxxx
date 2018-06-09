@@ -67,6 +67,10 @@ a:link {
 	float: left;
 }
 
+.right_overfl {
+  overflow: hidden;
+}
+
 .clearfix:after {
     display: block;
     font-size: 0;
@@ -91,6 +95,10 @@ a:link {
 .relatv {
     position: relative;
     z-index: 1;
+}
+
+.zIndex2 {
+  z-index: 2;
 }
 
 .underline {
@@ -195,13 +203,17 @@ nav li a.active {
   box-sizing: border-box;
 }
 
+.agents .result .list-group {
+  padding-bottom: 80px;
+}
+
 .agents .result .list-group-item {
   border: 2px solid #333;
   border-radius: 6px;
   margin-bottom: 16px;
   padding: 10px 16px;
   position: relative;
-  z-index: 1;
+  /*box-sizing: border-box;*/
 }
 
 .agents .list-group-item.color-idle {
@@ -216,10 +228,16 @@ nav li a.active {
   background-color: #666;
   margin-right: 20px;
   border-radius: 50%;
+  position: absolute;
+  left: 16px;
+  top: 10px;
+
 }
 
 .agents .item-detail {
-  width: 75%;
+  /*width: 100%;*/
+  margin-left: 60px;
+  /*overflow: hidden;*/
 }
 
 .agents .item-detail em {
@@ -232,6 +250,14 @@ nav li a.active {
 .agents .item-email {
   font-weight: bold;
   margin-right: 20px;
+}
+
+.agents .resource-box {
+  border-left: 1px solid #999;
+  overflow: hidden;
+  /*float: left;*/
+  margin-left: 10px;
+  padding-left: 10px;
 }
 
 .agents .item-resource {
@@ -252,9 +278,13 @@ nav li a.active {
 }
 
 .agents .item-operate {
-  position: absolute;
+  /*position: absolute;
   right: 16px;
-  bottom: 10px;
+  bottom: 10px;*/
+  float: right;
+  cursor: pointer;
+}
+.agents .item-operate label {
   cursor: pointer;
 }
 
@@ -282,7 +312,7 @@ nav li a.active {
 .agents .addBox {
   position: absolute;
   left: 50px;
-  bottom: 0px;
+  bottom: -105px;
   border: 2px solid #333;
   background-color: #f0fff0;
   border-radius: 10px;
@@ -314,7 +344,7 @@ nav li a.active {
 .agents .addBox p {
   font-size: 12px;
 }
-.agents .addBox input {
+.agents .addBox input[type="text"] {
   border: 1px solid #333;
   width: 500px;
   height: 16px;
@@ -324,12 +354,14 @@ nav li a.active {
 .agents .addBox .button {
   border: 2px solid #333;
   border-radius: 10px;
-  height: 22px;
+  height: 26px;
   line-height: 20px;
   text-align: center;
   padding: 0 5px;
   margin: 6px 6px 0 0;
   display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .history .list-group-item {

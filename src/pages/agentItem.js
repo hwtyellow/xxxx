@@ -1,5 +1,6 @@
 import React from 'react';
 
+import AddResourceItem from './addResourceItem';
 
 class AgentItem extends React.Component {
 	constructor(props) {
@@ -26,32 +27,29 @@ class AgentItem extends React.Component {
 			operateBtn = <label>Deny</label>;
 		}
 		var addBox = null;
-		if(dataItem.id == 1) {
-			addBox = <div className="addBox">
-						<p>(separate multiole resources name with commas)</p>
-						<input />
-						<div>
-						<span className="button">Add resources</span><span className="button">Close</span>
-						</div>
-					</div>;
+		if(dataItem.id == this.props.toAddResourceId) {
+			addBox = <AddResourceItem cancelAddResource={this.props.cancelAddResource}
+									addResource={this.props.addResource} />;
 		}
 		return(
-			<li className={"relatv list-group-item clearfix color-" + dataItem.state + ' ' + displayStyle}>
+			<li className={"relatv list-group-item clearfix color-" + dataItem.state + ' ' + displayStyle + (dataItem.id==this.props.toAddResourceId ? ' zIndex2' : '')}>
 				<img className="fl" src="" width="40" height="40" />
-				<div className="item-detail fl">
+				<div className="item-detail">
 					<p>
 						<span className="item-email">{dataItem.email}</span>
 						<em>|</em>{dataItem.state}<em>|</em>{dataItem.ip}<em>|</em>{dataItem.url}
 					</p>
-					<p>
-						+<span className="underline">Specify Resource</span>
-						<em>|</em>Resources:{resourcesList}
-					</p>
-				</div>
-				<div className="item-operate">
-					{
-						operateBtn
-					}
+					<div className="relatv">
+						<label className="fl" onClick={this.props.beforeAddResource.bind(this, dataItem.id)}>+<span className="underline">Specify Resource</span></label>
+						<div className="right_overfl">
+						<div className="item-operate">
+							{
+								operateBtn
+							}
+						</div>
+						<div className="resource-box">Resources:{resourcesList}</div>
+						</div>
+					</div>
 				</div>
 				{addBox}
 			</li>

@@ -82,6 +82,7 @@ class Agents extends React.Component {
     				]
     			}
     		],
+        // 统计数量
     		summary: {},
         history: [
           {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"},
@@ -94,20 +95,26 @@ class Agents extends React.Component {
           {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"},
           {name: "bjstdmngbgr02/Acceptance_test", url: "bjstdmngbgr02/Acceptance_test"}
         ],
-        filter: 0
+        filter: 0,
+        toAddResourceId: 0
     	}
       this.changeType = this.changeType.bind(this);
       this.handleResourceDelete = this.handleResourceDelete.bind(this);
+      this.handleResourceAdd = this.handleResourceAdd.bind(this);
+      this.beforeAddResource = this.beforeAddResource.bind(this);
+      this.cancelAddResource = this.cancelAddResource.bind(this);
   	}
   	componentWillMount() {
   		this.setState(function(prevState, props){
   			var tmpSummary = {};
   			prevState.data.map(function(item){
-  				if(tmpSummary[item.state]) {
-  					tmpSummary[item.state]++;
-  				}else {
-  					tmpSummary[item.state] = 1;
-  				}
+          if(prevState.filter == 0 || prevState.filter == item.type) {
+    				if(tmpSummary[item.state]) {
+    					tmpSummary[item.state]++;
+    				}else {
+    					tmpSummary[item.state] = 1;
+    				}            
+          }
   			})
   			return {summary: tmpSummary};
   		})
@@ -119,7 +126,21 @@ class Agents extends React.Component {
         _brother[i].classList.remove('active')
       }
       _target.classList.add('active');
-      this.setState({filter: typeId})
+
+      this.setState(function(prevState, props){
+        var tmpSummary = {};
+        prevState.data.map(function(item){
+          if(typeId == 0 || typeId == item.type) {
+            if(tmpSummary[item.state]) {
+              tmpSummary[item.state]++;
+            }else {
+              tmpSummary[item.state] = 1;
+            }            
+          }
+        })
+        return {summary: tmpSummary, filter: typeId};
+      })
+      // this.setState({filter: typeId, summary: tmpSummary})
     }
   	handleResourceDelete(itemId, resourceId) {
       let data = this.state.data;
@@ -133,6 +154,32 @@ class Agents extends React.Component {
       })
       this.setState({data})
   	}
+    handleResourceAdd(resourceStr) {
+      if(resourceStr) {
+        var resourceArr = resourceStr.split(',');
+        let data = this.state.data;
+        let toAddResourceId = this.state.toAddResourceId;
+        data = data.map(function(item) {
+          if(item.id != toAddResourceId) {
+            return item;
+          }else {
+            var indexId = item.resources.length + 1;
+            resourceArr.map(function(resource) {
+              item.resources.push({'id': indexId++, 'name': resource})
+            })
+            return item;
+          }
+        })
+        this.setState({data})
+        this.cancelAddResource();
+      }
+    }
+    beforeAddResource(itemId) {
+      this.setState({toAddResourceId: itemId})
+    }
+    cancelAddResource() {
+      this.setState({toAddResourceId: 0})
+    }
   	render() {
   		var summary = this.state.summary;
   		// console.log(summary)
@@ -152,7 +199,13 @@ class Agents extends React.Component {
 		      	</div>
 		      	<div className="box">
 		      		<div className="result">
-		      			<AgentsList data={this.state.data} deleteResource={this.handleResourceDelete} filter={this.state.filter} />
+		      			<AgentsList data={this.state.data} 
+                            deleteResource={this.handleResourceDelete} 
+                            beforeAddResource={this.beforeAddResource}
+                            addResource={this.handleResourceAdd}
+                            cancelAddResource={this.cancelAddResource}
+                            filter={this.state.filter}
+                            toAddResourceId={this.state.toAddResourceId} />
 		      		</div>
 		      		<div className="desc">
 		      			<div className="summary">
